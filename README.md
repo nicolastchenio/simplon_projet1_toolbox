@@ -44,12 +44,13 @@ This repository is structured to follow professional Python project standards us
 ├── tests/                 
 │   └── test_main.py
 │   └── test_math_csv.py   
-├── docs/                      
+├── docs/ 
+├── .dockerignore 
+├── .gitignore 
+├── .gitignore                      
 ├── pyproject.toml         
 ├── uv.lock                    
 ├── README.md
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
 └── LICENSE
 
 ```
@@ -92,6 +93,45 @@ This command will:
 uv run python -m app.main
 ```
 ---
+---
+
+## Docker
+
+This project can be run inside a Docker container for portability and reproducibility.
+
+### 1. Build the Docker image
+
+At the root of the repository, run:
+```
+docker build -t projet1-toolbox:1.0.0 .
+```
+This will:
+
+Use Python 3.11 slim as base
+
+Copy the project files and install dependencies using uv
+
+Prepare the container to run the application
+
+### 2. Run the container
+
+Expose the application on a local port (example: 8000):
+```
+docker run -p 8000:5000 projet1-toolbox:1.0.0
+```
+-p 8000:5000 maps port 5000 in the container to 8000 on your host
+
+The application will execute and display the CSV operations as usual
+
+### 3. Notes
+
+The Dockerfile uses CMD ["python", "-m", "app.main"] to allow relative imports to work properly.
+
+To rebuild the image after code changes, run docker build again.
+
+This approach ensures a consistent environment across machines without manual Python setup.
+
+---
 
 ## Running Tests
 
@@ -115,8 +155,6 @@ Run linting with
 ```
 uv run ruff check .
 ```
-
-
 ---
 
 ## Continuous Integration
