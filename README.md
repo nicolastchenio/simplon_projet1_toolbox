@@ -28,6 +28,11 @@ This repository is structured to follow professional Python project standards us
 
 ```plaintext
 .
+├── .github/                    
+│   ├── workflows/
+│   │   └── ci.yml
+│   └── CODE_OF_CONDUCT.md
+│   └── CONTRIBUTING.md          
 ├── app/                    
 │   ├── modules/           
 │   │   ├── __init__.py
