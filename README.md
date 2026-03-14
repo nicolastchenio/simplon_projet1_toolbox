@@ -1,10 +1,11 @@
 # Simplon Projet 1 – Python Toolbox
 
 ![CI Status](https://github.com/nicolastchenio/simplon_projet1_mlop/actions/workflows/ci.yml/badge.svg)
-![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
+![Coverage](https://raw.githubusercontent.com/nicolastchenio/simplon_projet1_toolbox/main/coverage.svg)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 ![Lint](https://img.shields.io/badge/lint-ruff-purple)
 ![License](https://img.shields.io/badge/license-MIT-green)
+
 
 ## Overview
 

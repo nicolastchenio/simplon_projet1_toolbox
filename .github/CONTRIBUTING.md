@@ -80,7 +80,6 @@ Example:
 
 ```
 feat: add square operation
-fix: correct csv parsing bug
 docs: update README
 ```
 
