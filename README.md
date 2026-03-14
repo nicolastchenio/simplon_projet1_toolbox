@@ -30,7 +30,8 @@ This repository is structured to follow professional Python project standards us
 .
 ├── .github/                    
 │   ├── workflows/
-│   │   └── ci.yml
+│   │   ├── ci.yml
+│   │   └── docs.yml
 │   └── CODE_OF_CONDUCT.md
 │   └── CONTRIBUTING.md          
 ├── app/                    
