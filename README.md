@@ -93,7 +93,6 @@ This command will:
 uv run python -m app.main
 ```
 ---
----
 
 ## Docker
 
