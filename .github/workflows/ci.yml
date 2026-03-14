@@ -43,7 +43,7 @@ jobs:
       # 4️⃣ Tests unitaires avec pytest et couverture
       - name: Run tests with pytest
         run: |
-          uv run pytest --cov=app --cov-report=xml
+          uv run pytest --cov=. --cov-report=xml
           uv run genbadge coverage -i coverage.xml -o coverage.svg
 
       - name: Commit coverage badge
