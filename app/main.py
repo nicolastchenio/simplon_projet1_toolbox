@@ -5,10 +5,14 @@ executes them using functions from the business logic module,
 and prints the results.
 """
 
+import os
 import pandas as pd
 
-from modules.mon_module import add, print_data, square, sub
+# from modules.mon_module import add, print_data, square, sub
+from .modules.mon_module import add, print_data, square, sub
 
+
+CSV_FILE_PATH = os.path.join(os.path.dirname(__file__), "moncsv.csv")
 
 def execute_operations(df: pd.DataFrame) -> None:
     """Execute mathematical operations described in a DataFrame.
@@ -51,7 +55,7 @@ def main() -> None:
         2. Display the dataset.
         3. Execute the operations defined in the file.
     """
-    df = pd.read_csv("app/moncsv.csv")
+    df = pd.read_csv(CSV_FILE_PATH)
 
     print("Loaded dataset:")
     print_data(df)
