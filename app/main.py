@@ -6,13 +6,13 @@ and prints the results.
 """
 
 import os
+
 import pandas as pd
 
-# from modules.mon_module import add, print_data, square, sub
 from .modules.mon_module import add, print_data, square, sub
 
-
 CSV_FILE_PATH = os.path.join(os.path.dirname(__file__), "moncsv.csv")
+
 
 def execute_operations(df: pd.DataFrame) -> None:
     """Execute mathematical operations described in a DataFrame.

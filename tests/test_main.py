@@ -1,8 +1,6 @@
-import os
 import pandas as pd
-from app.main import execute_operations, main
 
-from app.main import execute_operations
+from app.main import execute_operations, main
 
 
 def test_execute_operations_with_multiple_rows(capsys):
@@ -27,19 +25,21 @@ def test_execute_operations_with_multiple_rows(capsys):
     assert "square(8, nan) = 64" in captured.out
     assert "add(10, 2.0) = 12.0" in captured.out
     assert "square(4, nan) = 16" in captured.out
-    
+
+
 def test_main_function_creates_csv(tmp_path, monkeypatch, capsys):
     """Test the full main function with CSV reading/writing."""
-
     # Préparer un chemin temporaire pour le CSV
     csv_file = tmp_path / "moncsv.csv"
 
     # Données d’exemple
-    data = pd.DataFrame({
-        "operation": ["add", "sub", "square"],
-        "a": [1, 5, 3],
-        "b": [2, 2, None],
-    })
+    data = pd.DataFrame(
+        {
+            "operation": ["add", "sub", "square"],
+            "a": [1, 5, 3],
+            "b": [2, 2, None],
+        }
+    )
     data.to_csv(csv_file, index=False)
 
     # Remplacer temporairement le chemin CSV dans main
